@@ -1,19 +1,27 @@
 body {
 	background-color: blue;
-	align-content: center;
 }
 
 .Eightball {
-	margin: 0 auto;
-}
-
-.Eightball-ball {
 	text-align: center;
 	background-color: black;
 	border-radius: 100%;
+	margin-left: 20%;
 	color: white;
-	font-size: 1.5rem;
-	height: 300px;
+	font-size: 2rem;
 	width: 300px;
-	inline-size: min-content;
+	height: 300px;
+}
+
+.Container {
+	position: relative;
+	top: 30%;
+	left: 18%;
+	text-align: center;
+	width: 200px;
+}
+
+p {
+	text-align: center;
+	line-height: 100%;
 }

@@ -25,14 +25,34 @@ const Eightball = ({
 		{ msg: 'Very doubtful.', color: 'red' }
 	]
 }) => {
+	const [ text, setText ] = useState('Think of a Question');
+	const [ color, setColor ] = useState('black');
+
 	const pickAnswer = (answers) => {
 		let idx = Math.floor(Math.random() * answers.length);
 		return answers[idx];
 	};
+	const restart = () => {
+		setColor('black');
+		setText('Think of a Question');
+	};
+
+	const updateBall = () => {
+		let answer = pickAnswer(answers);
+		setText(answer.msg);
+		setColor(answer.color);
+		setTimeout(restart, 2500);
+	};
 	return (
-		<div className="Eightball">
-			<div className="Eightball-ball">
-				<p>Think of a Question</p>
+		<div
+			className="Eightball"
+			style={{ backgroundColor: color }}
+			onClick={() => {
+				updateBall();
+			}}
+		>
+			<div className="Container">
+				<p className="Eightball-text">{text}</p>
 			</div>
 		</div>
 	);
